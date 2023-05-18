@@ -49,7 +49,7 @@ public class SlotsService : ISlotsService
    
         var shifts = employee.Shifts!.Where(x => 
             x.Ending < appointmentsMaxDay &&
-            ((x.Starting <= _now && x.Ending > _now) || x.Starting > _now));
+            ((x.Starting <= _now && x.Ending > _now) && x.Starting > _now));
         
         foreach(var shift in shifts)
         {
